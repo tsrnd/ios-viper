@@ -13,4 +13,5 @@ public protocol UsecaseOutput { }
 
 public protocol Interactable: Usecase {
     var output: UsecaseOutput { get set }
+    func handle(input: (AnyObject) -> Void)
 }

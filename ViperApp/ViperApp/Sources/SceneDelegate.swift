@@ -14,6 +14,7 @@ import ModuleView
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var routingResolver: RoutingResolver?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -29,8 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = UIHostingController(rootView: setupView)
             self.window = window
             window.makeKeyAndVisible()
-            setup()
-            goHome()
+            routingResolver = RoutingResolver.defaultRoutingResolver(window: window)
+            let time = Date().advanced(by: 3)
+            OperationQueue.main.schedule(after: .init(time)) {
+                RoutingResolver.goto("/home")
+            }
         }
     }
 
@@ -60,21 +64,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-    }
-
-    // MARK: UserSession Lifecycle
-    
-    func setup() {
-        Routing.default.router = RootRouter(id: "root", root: window)
-    }
-
-    func goHome() {
-        NotificationCenter.default.post(
-            name: Routing.Name.needRouting,
-            object: self,
-            userInfo: [
-                Routing.Key.path: RootRouter.Path.home
-            ])
     }
 
 }

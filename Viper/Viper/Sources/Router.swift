@@ -7,139 +7,36 @@
 //
 
 import SwiftUI
+ 
+public typealias RoutingHandler = (_ path: String, _ parameter: RoutingParameter?) -> RoutingResult
+public typealias Guard = (_ path: String, _ parameter: RoutingParameter?) -> Bool
 
-public enum RoutingState {
-    case none
-    case willStart
-    case didEnd
-}
-
-public protocol RootView {
-    var root: UIViewController? { set get }
-}
-
-extension UIWindow: RootView {
-    public var root: UIViewController? {
-        set {
-            rootViewController = newValue
-        }
-        get {
-            rootViewController
-        }
-    }
-}
-
-extension UINavigationController: RootView {
-    public var root: UIViewController? {
-        set {
-            guard let root = newValue else {
-                viewControllers = []
-                return
-            }
-            viewControllers = [root]
-        }
-        get {
-            viewControllers.first
-        }
-    }
-}
-
-open class Router {
-    private var _id: String?
-    public var id: String? { _id }
-
-    private var _root: RootView?
-    public var root: RootView? { _root }
-
-    open var paths: [String] { fatalError("there're no paths are defined") }
-
-    public var allPaths: [String] {
-        var paths = self.paths
-        paths.append(contentsOf: _children.flatMap { $0.paths } )
-        return paths
+public class Router {
+    public let navigator: Navigator?
+    
+    public init(navigator: Navigator? = nil) {
+        self.navigator = navigator
     }
 
-    public init(id: String? = nil, root: RootView? = nil) {
-        _id = id
-        _root = root
+    private var _handlers: [String: RoutingHandler] = [:]
+    public var handlers: [String: RoutingHandler] { _handlers }
+    
+    private var _handlerGuards: [String: Guard] = [:]
+    public var handlerGuards: [String: Guard] { _handlerGuards }
+
+    private var _children: [String: Router] = [:]
+    public var children: [String: Router] { _children }
+    
+    private var _childGuards: [String: Guard] = [:]
+    public var childGuards: [String: Guard] { _childGuards }
+
+    public func route(path: String, guard: Guard? = nil, handler: @escaping RoutingHandler) {
+        _handlerGuards[path] = `guard`
+        _handlers[path] = handler
     }
 
-    private var _children: [Router] = []
-    public var children: [Router] { _children }
-
-    public func addChild(_ child: Router) {
-        let itrs = Set(allPaths).intersection(child.paths)
-        guard itrs.isEmpty else {
-            fatalError("conflicted paths: \(itrs)")
-        }
-        _children.append(child)
-    }
-
-    public func removeChild(_ child: Router) {
-        guard let idx = _children.firstIndex(of: child) else {
-            fatalError()
-        }
-        _children.remove(at: idx)
-    }
-
-    open func resolve(path: String) -> Bool {
-        for router in _children {
-            if router.resolve(path: path) {
-                return true
-            }
-        }
-        return false
-    }
-}
-
-extension Router: Equatable {
-    public static func == (lhs: Router, rhs: Router) -> Bool {
-        guard let lid = lhs.id, let rid = rhs.id, lid == rid else {
-            return false
-        }
-        return true
-    }
-}
-
-public class Routing {
-    public struct Name {
-        private init() { }
-        public static let needRouting = NSNotification.Name("Viper.Routing.needRouting")
-    }
-
-    public struct Key {
-        private init() { }
-        public static let path = "Viper.Routing.Key.path"
-    }
-
-    public static let `default` = Routing()
-
-    public var router: Router?
-
-    private var _state = RoutingState.none
-    public var state: RoutingState { _state }
-
-    private var _path: String?
-    public var path: String? { _path }
-
-    public init() {
-        let nc = NotificationCenter.default
-        nc.addObserver(
-            self,
-            selector: #selector(receive(notif:)),
-            name: Routing.Name.needRouting,
-            object: nil)
-    }
-
-    @objc private func receive(notif: Notification) {
-        guard let path = notif.userInfo?[Key.path] as? String, !path.isEmpty else {
-            fatalError("there's no path for routing")
-        }
-        guard let router = router else {
-            fatalError("there's no router for routing")
-        }
-        guard router.resolve(path: path) else {
-            fatalError("unhandled routing path: \(path)")
-        }
+    public func route(base: String, guard: Guard? = nil, router: Router) {
+        _childGuards[base] = `guard`
+        _children[base] = router
     }
 }

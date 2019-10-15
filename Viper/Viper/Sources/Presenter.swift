@@ -8,6 +8,6 @@
 
 import SwiftUI
 
-public protocol Presentable {
+public protocol Presenter {
     
 }
