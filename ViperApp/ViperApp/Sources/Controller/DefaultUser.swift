@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  DefaultUser.swift
 //  ViperApp
 //
 //  Created by MBA on 10/14/19.
