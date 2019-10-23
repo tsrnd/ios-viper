@@ -8,26 +8,11 @@
 
 import SwiftUI
 import Viper
-import ModuleView
-import ModuleBusiness
 
 extension RoutingResolver {
     static func defaultRoutingResolver(window: UIWindow) -> RoutingResolver {
         let root = rootRouter(navigator: window)
         return RoutingResolver(root: root)
-    }
-
-    static func goto(_ path: String, parameter: RoutingParameter? = nil) {
-        var info: [String: Any] = [
-            Routing.Key.path: path
-        ]
-        if let parameter = parameter {
-            info[Routing.Key.parameter] = parameter
-        }
-        NotificationCenter.default.post(
-            name: Routing.Name.needRouting,
-            object: self,
-            userInfo: info)
     }
 }
 
@@ -35,7 +20,7 @@ private extension RoutingResolver {
     static func rootRouter(navigator: Navigator) -> Router {
         let router = Router(navigator: navigator)
         router.route(path: "/home") { (path, parameter) -> RoutingResult in
-            switch User.default.state {
+            switch UserInfo.default.state {
             case .unauthenticated:
                 return .redirect(
                     from: "/home",

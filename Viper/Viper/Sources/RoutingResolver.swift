@@ -10,7 +10,7 @@ import Foundation
 
 public class RoutingResolver {
     private let _root: Router
-    
+
     public init(root: Router) {
         _root = root
         let nc = NotificationCenter.default
@@ -28,7 +28,7 @@ public class RoutingResolver {
         let parameter = notif.userInfo?[Routing.Key.parameter] as? RoutingParameter
         resolve(router: _root, path: path, parameter: parameter)
     }
-    
+
     private func resolve(router: Router, path: String, parameter: RoutingParameter?) {
         if let handler = router.handlers[path] {
             let result = handler(path, parameter)
@@ -61,5 +61,18 @@ public class RoutingResolver {
             }
             resolve(router: child, path: path, parameter: parameter)
         }
+    }
+
+    public static func goto(_ path: String, parameter: RoutingParameter? = nil) {
+        var info: [String: Any] = [
+            Routing.Key.path: path
+        ]
+        if let parameter = parameter {
+            info[Routing.Key.parameter] = parameter
+        }
+        NotificationCenter.default.post(
+            name: Routing.Name.needRouting,
+            object: self,
+            userInfo: info)
     }
 }

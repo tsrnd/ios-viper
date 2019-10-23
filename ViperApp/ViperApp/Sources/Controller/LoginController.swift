@@ -8,12 +8,10 @@
 
 import Foundation
 import Viper
-import ModuleView
-import ModuleBusiness
 
 class DefaultLoginController: LoginController {
     func login() {
-        User.default.state = .authenticated
+        UserInfo.default.state = .authenticated
         RoutingResolver.goto("/home")
     }
 }

@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import ModuleBusiness
 
-extension User {
-    static var `default` = User()
+extension UserInfo {
+    static var `default` = UserInfo()
 }

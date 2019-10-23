@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 import Viper
-import ModuleView
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

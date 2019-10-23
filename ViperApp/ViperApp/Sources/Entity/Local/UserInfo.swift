@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserInfo.swift
 //  ModuleBusiness
 //
 //  Created by MBA on 10/4/19.
@@ -13,7 +13,7 @@ public enum AuthState {
     case unauthenticated
 }
 
-public class User {
+public class UserInfo {
     public var state: AuthState = .unauthenticated
     
     public init() { }
