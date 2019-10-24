@@ -10,4 +10,5 @@ target 'ViperApp' do
   project 'ViperApp/ViperApp.xcodeproj'
   pod 'Viper', :path => './Viper/Viper.podspec'
   pod 'RxSwift', '~> 5.0.0'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
 end

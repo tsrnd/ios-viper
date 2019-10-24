@@ -15,6 +15,8 @@
 		2C30B0202360B6940024B459 /* ToggleSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C09454D2346E68F003C33AE /* ToggleSettingRow.swift */; };
 		2C30B0212360B6B60024B459 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945492346E137003C33AE /* SettingsView.swift */; };
 		2C30B0222360B6B60024B459 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945472346E123003C33AE /* TabBarView.swift */; };
+		2C30B0292360C8C10024B459 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B0282360C8C10024B459 /* UserRepository.swift */; };
+		2C30B02B2360C9160024B459 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B02A2360C9160024B459 /* DTO.swift */; };
 		2C35B2612343355700DF0674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B2602343355700DF0674 /* AppDelegate.swift */; };
 		2C35B2632343355700DF0674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B2622343355700DF0674 /* SceneDelegate.swift */; };
 		2C35B2672343355900DF0674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C35B2662343355900DF0674 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		2C0945532346EA66003C33AE /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		2C23CCE12354496800DAFC18 /* DefaultUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserInfo.swift; sourceTree = "<group>"; };
 		2C23CCE32354660B00DAFC18 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2C30B0282360C8C10024B459 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		2C30B02A2360C9160024B459 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 		2C35B25D2343355700DF0674 /* ViperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C35B2602343355700DF0674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C35B2622343355700DF0674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,13 +176,13 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		2C23CCE82354692A00DAFC18 /* Entity */ = {
+		2C23CCE82354692A00DAFC18 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				2C23CCEA2354696600DAFC18 /* Remote */,
 				2C23CCE92354695700DAFC18 /* Local */,
 			);
-			path = Entity;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		2C23CCE92354695700DAFC18 /* Local */ = {
@@ -192,6 +196,8 @@
 		2C23CCEA2354696600DAFC18 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				2C30B0282360C8C10024B459 /* UserRepository.swift */,
+				2C30B02A2360C9160024B459 /* DTO.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -274,7 +280,7 @@
 				2C23CCE52354690600DAFC18 /* View */,
 				2C23CCE62354690C00DAFC18 /* Controller */,
 				2C23CCE72354691600DAFC18 /* Interactor */,
-				2C23CCE82354692A00DAFC18 /* Entity */,
+				2C23CCE82354692A00DAFC18 /* Repository */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 				2C30B01F2360B68D0024B459 /* HomeView.swift in Sources */,
 				2C30B0202360B6940024B459 /* ToggleSettingRow.swift in Sources */,
 				2C35B2612343355700DF0674 /* AppDelegate.swift in Sources */,
+				2C30B0292360C8C10024B459 /* UserRepository.swift in Sources */,
 				2C23CCE42354660B00DAFC18 /* LoginController.swift in Sources */,
 				2C35B2632343355700DF0674 /* SceneDelegate.swift in Sources */,
 				2C35B3CB2344648B00DF0674 /* SetupView.swift in Sources */,
@@ -475,6 +482,7 @@
 				2C30B01D2360B6600024B459 /* UserInfo.swift in Sources */,
 				2C30B01E2360B6780024B459 /* LoginView.swift in Sources */,
 				2C6EC1632346023400C644E5 /* DefaultRoutingResolver.swift in Sources */,
+				2C30B02B2360C9160024B459 /* DTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

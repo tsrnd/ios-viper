@@ -1,14 +1,17 @@
 PODS:
+  - Alamofire (5.0.0-rc.2)
   - RxSwift (5.0.0)
   - Viper (1.0.0):
     - RxSwift (~> 5.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.2)
   - RxSwift (~> 5.0.0)
   - Viper (from `./Viper/Viper.podspec`)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - RxSwift
 
 EXTERNAL SOURCES:
@@ -16,9 +19,10 @@ EXTERNAL SOURCES:
     :path: "./Viper/Viper.podspec"
 
 SPEC CHECKSUMS:
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   Viper: cc582a96a02cb35520fc560a3869041e5dbf9170
 
-PODFILE CHECKSUM: 1d5c2c633d9ecc85e8e7ec54f680c4e1b2dcfdbb
+PODFILE CHECKSUM: 673471248d3a7d753e29ea515b0f5a2b1eaef65d
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.4
