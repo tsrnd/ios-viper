@@ -7,19 +7,16 @@
 //
 
 import Foundation
+import Alamofire
 
-class Request {
-    
-}
-
-class Reponse<Model>: Codable where Model: Codable {
-    class Meta: Codable {
+class FBBody<FBModel>: Codable where FBModel: Codable {
+    class FBMeta: Codable {
         var message: String?
         var total: Int?
         var offset: Int?
         var limit: Int?
     }
 
-    var meta: Meta?
-    var data: Model?
+    var meta: FBMeta?
+    var data: FBModel?
 }

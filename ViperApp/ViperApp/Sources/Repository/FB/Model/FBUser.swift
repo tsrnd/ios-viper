@@ -1,5 +1,5 @@
 //
-//  FBUserRepository.swift
+//  FBUser.swift
 //  ViperApp
 //
 //  Created by MBA on 10/24/19.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Alamofire
 
-class UserRepository {
+class FBUser: Codable {
     
 }
