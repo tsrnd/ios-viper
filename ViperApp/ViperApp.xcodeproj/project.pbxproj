@@ -8,17 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2C23CCE22354496800DAFC18 /* DefaultUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23CCE12354496800DAFC18 /* DefaultUserInfo.swift */; };
-		2C23CCE42354660B00DAFC18 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23CCE32354660B00DAFC18 /* LoginController.swift */; };
 		2C30B01D2360B6600024B459 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945532346EA66003C33AE /* UserInfo.swift */; };
 		2C30B01E2360B6780024B459 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B3C523445BCB00DF0674 /* LoginView.swift */; };
-		2C30B01F2360B68D0024B459 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945452346E0D5003C33AE /* HomeView.swift */; };
 		2C30B0202360B6940024B459 /* ToggleSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C09454D2346E68F003C33AE /* ToggleSettingRow.swift */; };
-		2C30B0212360B6B60024B459 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945492346E137003C33AE /* SettingsView.swift */; };
+		2C30B0212360B6B60024B459 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945492346E137003C33AE /* SettingListView.swift */; };
 		2C30B0222360B6B60024B459 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0945472346E123003C33AE /* TabBarView.swift */; };
 		2C30B0292360C8C10024B459 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B0282360C8C10024B459 /* UserRepository.swift */; };
 		2C30B02B2360C9160024B459 /* FBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B02A2360C9160024B459 /* FBService.swift */; };
 		2C30B02E2361A2880024B459 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B02D2361A2880024B459 /* FBUser.swift */; };
-		2C30B0302361B39C0024B459 /* FBMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B02F2361B39C0024B459 /* FBMockService.swift */; };
+		2C30B0302361B39C0024B459 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B02F2361B39C0024B459 /* MockRequest.swift */; };
 		2C35B2612343355700DF0674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B2602343355700DF0674 /* AppDelegate.swift */; };
 		2C35B2632343355700DF0674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B2622343355700DF0674 /* SceneDelegate.swift */; };
 		2C35B2672343355900DF0674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C35B2662343355900DF0674 /* Assets.xcassets */; };
@@ -27,6 +25,13 @@
 		2C35B2782343355900DF0674 /* ViperAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B2772343355900DF0674 /* ViperAppTests.swift */; };
 		2C35B2832343355900DF0674 /* ViperAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B2822343355900DF0674 /* ViperAppUITests.swift */; };
 		2C35B3CB2344648B00DF0674 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35B3CA2344648B00DF0674 /* SetupView.swift */; };
+		2C6AC59523A94EDD00FCED8A /* FeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC59423A94EDD00FCED8A /* FeedListView.swift */; };
+		2C6AC59723A94EEC00FCED8A /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC59623A94EEC00FCED8A /* FeedDetailView.swift */; };
+		2C6AC59923A9518600FCED8A /* ActionSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC59823A9518600FCED8A /* ActionSettingRow.swift */; };
+		2C6AC59B23A9540800FCED8A /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC59A23A9540800FCED8A /* SettingController.swift */; };
+		2C6AC59D23A9547400FCED8A /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC59C23A9547400FCED8A /* AuthController.swift */; };
+		2C6AC5A123A9590600FCED8A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC5A023A9590500FCED8A /* FeedController.swift */; };
+		2C6AC5A323A95AF500FCED8A /* FeedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AC5A223A95AF500FCED8A /* FeedRow.swift */; };
 		2C6EC1632346023400C644E5 /* DefaultRoutingResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EC1622346023400C644E5 /* DefaultRoutingResolver.swift */; };
 		950481B5D7B09FF101B32785 /* libPods-ViperApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700A788201B8B800BEDABCB /* libPods-ViperApp.a */; };
 /* End PBXBuildFile section */
@@ -62,17 +67,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2C0945452346E0D5003C33AE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2C0945472346E123003C33AE /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		2C0945492346E137003C33AE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2C0945492346E137003C33AE /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
 		2C09454D2346E68F003C33AE /* ToggleSettingRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleSettingRow.swift; sourceTree = "<group>"; };
 		2C0945532346EA66003C33AE /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		2C23CCE12354496800DAFC18 /* DefaultUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserInfo.swift; sourceTree = "<group>"; };
-		2C23CCE32354660B00DAFC18 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		2C30B0282360C8C10024B459 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		2C30B02A2360C9160024B459 /* FBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBService.swift; sourceTree = "<group>"; };
 		2C30B02D2361A2880024B459 /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
-		2C30B02F2361B39C0024B459 /* FBMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMockService.swift; sourceTree = "<group>"; };
+		2C30B02F2361B39C0024B459 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		2C35B25D2343355700DF0674 /* ViperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C35B2602343355700DF0674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C35B2622343355700DF0674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,13 @@
 		2C35B2842343355900DF0674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C35B3C523445BCB00DF0674 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2C35B3CA2344648B00DF0674 /* SetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		2C6AC59423A94EDD00FCED8A /* FeedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListView.swift; sourceTree = "<group>"; };
+		2C6AC59623A94EEC00FCED8A /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
+		2C6AC59823A9518600FCED8A /* ActionSettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSettingRow.swift; sourceTree = "<group>"; };
+		2C6AC59A23A9540800FCED8A /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		2C6AC59C23A9547400FCED8A /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		2C6AC5A023A9590500FCED8A /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		2C6AC5A223A95AF500FCED8A /* FeedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRow.swift; sourceTree = "<group>"; };
 		2C6EC1622346023400C644E5 /* DefaultRoutingResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRoutingResolver.swift; sourceTree = "<group>"; };
 		36DFCC339CBA6F76DD4DAE45 /* Pods-ViperApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperApp.debug.xcconfig"; path = "Target Support Files/Pods-ViperApp/Pods-ViperApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4700A788201B8B800BEDABCB /* libPods-ViperApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViperApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,25 +134,28 @@
 			isa = PBXGroup;
 			children = (
 				2C09454D2346E68F003C33AE /* ToggleSettingRow.swift */,
+				2C6AC59823A9518600FCED8A /* ActionSettingRow.swift */,
 			);
 			path = SettingRows;
 			sourceTree = "<group>";
 		};
-		2C0945502346E8D9003C33AE /* Home */ = {
+		2C0945502346E8D9003C33AE /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				2C0945452346E0D5003C33AE /* HomeView.swift */,
+				2C6AC5A423A95B0700FCED8A /* FeedRows */,
+				2C6AC59423A94EDD00FCED8A /* FeedListView.swift */,
+				2C6AC59623A94EEC00FCED8A /* FeedDetailView.swift */,
 			);
-			path = Home;
+			path = Feed;
 			sourceTree = "<group>";
 		};
-		2C0945512346E8E2003C33AE /* Settings */ = {
+		2C0945512346E8E2003C33AE /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				2C09454F2346E699003C33AE /* SettingRows */,
-				2C0945492346E137003C33AE /* SettingsView.swift */,
+				2C0945492346E137003C33AE /* SettingListView.swift */,
 			);
-			path = Settings;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		2C0945522346E8FE003C33AE /* Auth */ = {
@@ -157,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				2C0945522346E8FE003C33AE /* Auth */,
-				2C0945502346E8D9003C33AE /* Home */,
-				2C0945512346E8E2003C33AE /* Settings */,
+				2C0945502346E8D9003C33AE /* Feed */,
+				2C0945512346E8E2003C33AE /* Setting */,
 				2C0945472346E123003C33AE /* TabBarView.swift */,
 			);
 			path = View;
@@ -168,7 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				2C23CCE12354496800DAFC18 /* DefaultUserInfo.swift */,
-				2C23CCE32354660B00DAFC18 /* LoginController.swift */,
+				2C6AC59C23A9547400FCED8A /* AuthController.swift */,
+				2C6AC5A023A9590500FCED8A /* FeedController.swift */,
+				2C6AC59A23A9540800FCED8A /* SettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +198,7 @@
 		2C23CCE82354692A00DAFC18 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				2CE33E9A23699EAD004C0A32 /* Utils */,
 				2C23CCEA2354696600DAFC18 /* FB */,
 				2C23CCE92354695700DAFC18 /* Local */,
 			);
@@ -203,7 +219,6 @@
 				2C30B02C2361A26B0024B459 /* Model */,
 				2C30B0282360C8C10024B459 /* UserRepository.swift */,
 				2C30B02A2360C9160024B459 /* FBService.swift */,
-				2C30B02F2361B39C0024B459 /* FBMockService.swift */,
 			);
 			path = FB;
 			sourceTree = "<group>";
@@ -305,6 +320,22 @@
 				2C35B2662343355900DF0674 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C6AC5A423A95B0700FCED8A /* FeedRows */ = {
+			isa = PBXGroup;
+			children = (
+				2C6AC5A223A95AF500FCED8A /* FeedRow.swift */,
+			);
+			path = FeedRows;
+			sourceTree = "<group>";
+		};
+		2CE33E9A23699EAD004C0A32 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C30B02F2361B39C0024B459 /* MockRequest.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		3B948C646EE9250FFFEC02F1 /* Frameworks */ = {
@@ -483,19 +514,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C30B0212360B6B60024B459 /* SettingsView.swift in Sources */,
-				2C30B0302361B39C0024B459 /* FBMockService.swift in Sources */,
+				2C30B0212360B6B60024B459 /* SettingListView.swift in Sources */,
+				2C30B0302361B39C0024B459 /* MockRequest.swift in Sources */,
 				2C30B0222360B6B60024B459 /* TabBarView.swift in Sources */,
-				2C30B01F2360B68D0024B459 /* HomeView.swift in Sources */,
+				2C6AC59523A94EDD00FCED8A /* FeedListView.swift in Sources */,
+				2C6AC5A123A9590600FCED8A /* FeedController.swift in Sources */,
 				2C30B0202360B6940024B459 /* ToggleSettingRow.swift in Sources */,
+				2C6AC59923A9518600FCED8A /* ActionSettingRow.swift in Sources */,
 				2C35B2612343355700DF0674 /* AppDelegate.swift in Sources */,
 				2C30B0292360C8C10024B459 /* UserRepository.swift in Sources */,
+				2C6AC59D23A9547400FCED8A /* AuthController.swift in Sources */,
 				2C30B02E2361A2880024B459 /* FBUser.swift in Sources */,
-				2C23CCE42354660B00DAFC18 /* LoginController.swift in Sources */,
+				2C6AC5A323A95AF500FCED8A /* FeedRow.swift in Sources */,
 				2C35B2632343355700DF0674 /* SceneDelegate.swift in Sources */,
+				2C6AC59723A94EEC00FCED8A /* FeedDetailView.swift in Sources */,
 				2C35B3CB2344648B00DF0674 /* SetupView.swift in Sources */,
 				2C23CCE22354496800DAFC18 /* DefaultUserInfo.swift in Sources */,
 				2C30B01D2360B6600024B459 /* UserInfo.swift in Sources */,
+				2C6AC59B23A9540800FCED8A /* SettingController.swift in Sources */,
 				2C30B01E2360B6780024B459 /* LoginView.swift in Sources */,
 				2C6EC1632346023400C644E5 /* DefaultRoutingResolver.swift in Sources */,
 				2C30B02B2360C9160024B459 /* FBService.swift in Sources */,
@@ -675,7 +711,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.ViperApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.viperapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -699,7 +735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.ViperApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.viperapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

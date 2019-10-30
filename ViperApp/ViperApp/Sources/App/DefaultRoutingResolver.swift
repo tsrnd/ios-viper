@@ -19,18 +19,18 @@ extension RoutingResolver {
 private extension RoutingResolver {
     static func rootRouter(navigator: Navigator) -> Router {
         let router = Router(navigator: navigator)
-        router.route(path: "/home") { (path, parameter) -> RoutingResult in
+        router.route(path: "/feeds") { (path, parameter) -> RoutingResult in
             switch UserInfo.default.state {
             case .unauthenticated:
                 return .redirect(
-                    from: "/home",
+                    from: "/feeds",
                     to: "/auth/login",
                     parameter: nil)
             case .authenticated:
                 guard let navigator = router.navigator else {
                     fatalError("navigator of '\(router)' is nil")
                 }
-                let view = HomeView()
+                let view = TabBarView()
                 let host = UIHostingController(rootView: view)
                 let navi = UINavigationController(rootViewController: host)
                 navigator.rootViewController = navi
@@ -48,7 +48,7 @@ private extension RoutingResolver {
                 fatalError("navigator of '\(router)' is nil")
             }
             var view = LoginView()
-            view.ctrl = DefaultLoginController()
+            view.hdlr = AuthController()
             let host = UIHostingController(rootView: view)
             let navi = UINavigationController(rootViewController: host)
             navigator.rootViewController = navi
@@ -58,6 +58,25 @@ private extension RoutingResolver {
             return .accepted
         }
         router.route(path: "/logout") { (path, parameter) -> RoutingResult in
+            return .accepted
+        }
+        return router
+    }
+    
+    static func feedRouter(navigator: Navigator) -> Router {
+        let router = Router(navigator: navigator)
+        router.route(path: "/{feedID}") { (path, parameter) -> RoutingResult in
+            guard let navigator = router.navigator else {
+                fatalError("navigator of '\(router)' is nil")
+            }
+            var view = FeedListView()
+            view.hdlr = FeedController()
+            let host = UIHostingController(rootView: view)
+            let navi = UINavigationController(rootViewController: host)
+            navigator.rootViewController = navi
+            return .accepted
+        }
+        router.route(path: "/search") { (path, parameter) -> RoutingResult in
             return .accepted
         }
         return router

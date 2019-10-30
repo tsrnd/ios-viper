@@ -14,7 +14,7 @@ public struct ToggleSettingRow: View {
     public var body: some View {
         HStack {
             Toggle(isOn: $isOn) {
-                Text("Switcher Setting Row")
+                Text("Toggle Setting Row")
             }
         }
     }

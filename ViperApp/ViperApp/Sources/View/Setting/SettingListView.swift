@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  SettingListView.swift
 //  ModuleView
 //
 //  Created by MBA on 10/4/19.
@@ -8,18 +8,19 @@
 
 import SwiftUI
 
-public struct SettingsView: View {
+public struct SettingListView: View {
     public var body: some View {
         NavigationView {
             List {
                 ToggleSettingRow()
+                ActionSettingRow()
             }.navigationBarTitle("Privacy")
         }.navigationBarTitle("SETTINGS")
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct SettingList_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingListView()
     }
 }

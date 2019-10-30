@@ -8,15 +8,15 @@
 
 import SwiftUI
 
-public protocol LoginController: AnyObject {
+public protocol LoginHandler: AnyObject {
     func login()
 }
 
 public struct LoginView: View {
     @State private var name: String = ""
     @State private var msg: String = ""
-    
-    public var ctrl: LoginController?
+
+    public var hdlr: LoginHandler?
 
     public init() { }
 
@@ -28,17 +28,15 @@ public struct LoginView: View {
                     .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                 Text(msg)
             }
-            Button(action: {
-                self._login()
-            }, label: {
+            Button(action: { self._login() }) {
                 Text("Login")
-            })
+            }
         }
     }
-    
+
     private func _login() {
         msg = "Hello \(name)!"
-        ctrl?.login()
+        hdlr?.login()
     }
 }
 

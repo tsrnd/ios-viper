@@ -1,5 +1,5 @@
 //
-//  LoginController.swift
+//  AuthController.swift
 //  ViperApp
 //
 //  Created by MBA on 10/14/19.
@@ -9,9 +9,9 @@
 import Foundation
 import Viper
 
-class DefaultLoginController: LoginController {
+class AuthController: LoginHandler {
     func login() {
         UserInfo.default.state = .authenticated
-        RoutingResolver.goto("/home")
+        RoutingResolver.goto("/feeds")
     }
 }

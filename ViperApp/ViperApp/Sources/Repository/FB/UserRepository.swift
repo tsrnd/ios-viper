@@ -12,13 +12,16 @@ import Alamofire
 class FBUserRepository {
     private let session: Session
     
-    init(session: Session = Session.mock) {
+    init(session: Session = Session.default) {
         self.session = session
     }
     
-    func login(credential: [String: Any], completion: @escaping (AFResult<FBBody<FBUser>>) -> Void) {
+    func login(credential: [String: Any], completion: @escaping (AFResult<FBBody<FBUser>>) -> Void) throws {
         let req = try! URLRequest(url: "/api/auth/login", method: .post)
-        session.request(req).responseDecodable(of: FBBody<FBUser>.self) { res in
+        let _ = try session.request(req)
+            .mock()
+            .shouldReponse(status: 200, headers: [:], body: .file(name: "login", ext: "json"))
+            .responseDecodable(of: FBBody<FBUser>.self) { res in
             completion(res.result)
         }
     }

@@ -14,12 +14,12 @@ public struct TabBarView: View {
     public var body: some View {
         VStack {
             TabView(selection: $selection) {
-                HomeView()
+                FeedListView()
                     .tabItem {
                         Image("house")
                         Text("Tab 1")
                     }.tag(1)
-                SettingsView()
+                SettingListView()
                     .tabItem {
                         Image("gear")
                         Text("Tab 2")
